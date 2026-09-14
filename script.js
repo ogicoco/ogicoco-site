@@ -6,3 +6,16 @@ const els=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});els.forEach(el=>io.observe(el))}else{els.forEach(el=>el.classList.add('is-visible'))}
 const eikenCard=document.querySelector('.support-cards .support-card');
 if(eikenCard&&!eikenCard.querySelector('.eiken-detail-link')){const a=document.createElement('a');a.href='eiken.html';a.className='text-link eiken-detail-link';a.textContent='英検対策を詳しく見る →';a.style.display='inline-block';a.style.marginTop='14px';eikenCard.appendChild(a)}
+
+document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
+  link.addEventListener('click',()=>{
+    if(typeof window.gtag==='function'){
+      window.gtag('event','line_click',{
+        link_text:(link.textContent||'').trim(),
+        link_url:link.href,
+        link_position:index+1,
+        page_path:window.location.pathname
+      });
+    }
+  });
+});
