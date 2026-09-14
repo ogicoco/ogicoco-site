@@ -1,4 +1,15 @@
 document.documentElement.classList.add('js');
+
+const GA_MEASUREMENT_ID='G-FHXZG8GX1N';
+window.dataLayer=window.dataLayer||[];
+window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+window.gtag('js',new Date());
+window.gtag('config',GA_MEASUREMENT_ID);
+const gaScript=document.createElement('script');
+gaScript.async=true;
+gaScript.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+document.head.appendChild(gaScript);
+
 const button=document.querySelector('.menu-button');
 const menu=document.querySelector('.mobile-menu');
 if(button&&menu){button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));menu.hidden=false;menu.classList.toggle('is-open',!open);if(open){menu.hidden=true}});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{button.setAttribute('aria-expanded','false');menu.classList.remove('is-open');menu.hidden=true}))}
@@ -9,13 +20,11 @@ if(eikenCard&&!eikenCard.querySelector('.eiken-detail-link')){const a=document.c
 
 document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
   link.addEventListener('click',()=>{
-    if(typeof window.gtag==='function'){
-      window.gtag('event','line_click',{
-        link_text:(link.textContent||'').trim(),
-        link_url:link.href,
-        link_position:index+1,
-        page_path:window.location.pathname
-      });
-    }
+    window.gtag('event','line_click',{
+      link_text:(link.textContent||'').trim(),
+      link_url:link.href,
+      link_position:index+1,
+      page_path:window.location.pathname
+    });
   });
 });
