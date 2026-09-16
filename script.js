@@ -33,6 +33,18 @@ if(featuresHeading){
   if(mobileFeaturesHeading.addEventListener){mobileFeaturesHeading.addEventListener('change',updateFeaturesHeading)}
 }
 
+const trialHeading=document.querySelector('#trial .section-heading h2');
+if(trialHeading){
+  const mobileTrialHeading=window.matchMedia('(max-width: 600px)');
+  const updateTrialHeading=()=>{
+    trialHeading.innerHTML=mobileTrialHeading.matches
+      ? 'LINEから<br>かんたん4ステップ'
+      : 'LINEから かんたん4ステップ';
+  };
+  updateTrialHeading();
+  if(mobileTrialHeading.addEventListener){mobileTrialHeading.addEventListener('change',updateTrialHeading)}
+}
+
 const lessonSceneImage=document.querySelector('img[src="assets/images/students-studying.jpg"]');
 if(lessonSceneImage){lessonSceneImage.style.objectPosition='center 35%'}
 
