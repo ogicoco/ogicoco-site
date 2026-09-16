@@ -22,10 +22,11 @@
   <style>
     .subpage-hero{padding:72px 0 68px;background:radial-gradient(circle at 80% 10%,#e8f7fc 0,transparent 38%),linear-gradient(180deg,#fffaf0,#fffdf8)}
     .subpage-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-    .subpage-hero h1{font-size:clamp(38px,5vw,64px);line-height:1.2;margin:0 0 20px;letter-spacing:-.04em}
+    .subpage-hero h1{font-size:clamp(36px,3.1vw,48px);line-height:1.22;margin:0 0 20px;letter-spacing:-.04em}
+    .subpage-hero h1 .headline-line{display:block;white-space:nowrap}
     .subpage-hero h1 em{font-style:normal;color:var(--red)}
     .subpage-hero .lead{font-size:18px;color:#4e6973;margin:0 0 26px}
-    .subpage-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:32px;box-shadow:var(--shadow)}
+    .subpage-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 46%;border-radius:32px;box-shadow:var(--shadow)}
     .simple-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .simple-card{background:#fff;border:1px solid #e5eff3;border-radius:22px;padding:26px}
     .simple-card h3{margin:10px 0 8px;font-size:20px}
@@ -37,6 +38,7 @@
     .price-note p{margin:6px 0;color:#5f7076}
     .subpage-back{display:inline-block;margin-bottom:18px;color:var(--blue-dark);font-weight:800;text-underline-offset:4px}
     @media(max-width:900px){.subpage-grid{grid-template-columns:1fr;gap:34px}.simple-grid{grid-template-columns:1fr}.eiken-list{grid-template-columns:1fr}.subpage-hero{padding:48px 0 58px}}
+    @media(max-width:560px){.subpage-hero h1{font-size:clamp(34px,10vw,44px)}.subpage-hero h1 .headline-line{white-space:normal}}
   </style>
 </head>
 <body>
@@ -57,12 +59,12 @@
         <div>
           <a class="subpage-back" href="/">← トップページへ</a>
           <p class="eyebrow">荻窪の英検対策</p>
-          <h1>受験日から逆算して、<br><em>必要な英語を一つずつ。</em></h1>
+          <h1><span class="headline-line">受験日から逆算して、</span><em class="headline-line">必要な英語を一つずつ。</em></h1>
           <p class="lead">英検は「何を、いつまでに、どの順番で進めるか」が大切です。おぎココでは、受験する級・試験日・現在の理解度を確認し、一人ひとりに合った学習内容を組み立てます。</p>
           <div class="hero-badges"><span>小1〜高3</span><span>1対2個別指導</span><span>英検対策のみOK</span></div>
           <a class="btn btn-line btn-large" href="https://page.line.me/971ktbrj" target="_blank" rel="noopener noreferrer">LINEで英検対策を相談する</a>
         </div>
-        <div class="subpage-photo"><img src="assets/images/study-scene.webp" alt="おぎココで学習している様子" /></div>
+        <div class="subpage-photo"><img src="assets/images/teacher-lesson.jpg" alt="英語教材とホワイトボードを使って英語を指導する代表講師" /></div>
       </div>
     </section>
 
