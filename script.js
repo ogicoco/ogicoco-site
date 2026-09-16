@@ -18,6 +18,9 @@ if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>
 const eikenCard=document.querySelector('.support-cards .support-card');
 if(eikenCard&&!eikenCard.querySelector('.eiken-detail-link')){const a=document.createElement('a');a.href='eiken.html';a.className='text-link eiken-detail-link';a.textContent='英検対策を詳しく見る →';a.style.display='inline-block';a.style.marginTop='14px';eikenCard.appendChild(a)}
 
+const learningModeTitle=document.querySelector('.split-photo h3');
+if(learningModeTitle){learningModeTitle.innerHTML='「おぎココに来ると、<br>学習モードに。」'}
+
 document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
   link.addEventListener('click',()=>{
     window.gtag('event','line_click',{
