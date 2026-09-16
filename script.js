@@ -52,6 +52,12 @@ const trialLineButton=document.querySelector('#trial a.btn-line');
 if(trialLineButton){
   trialLineButton.innerHTML='LINEで無料体験を<br>予約する';
   trialLineButton.style.whiteSpace='nowrap';
+  const mobileTrialButton=window.matchMedia('(max-width: 600px)');
+  const updateTrialButtonAlignment=()=>{
+    trialLineButton.style.textAlign=mobileTrialButton.matches?'center':'';
+  };
+  updateTrialButtonAlignment();
+  if(mobileTrialButton.addEventListener){mobileTrialButton.addEventListener('change',updateTrialButtonAlignment)}
 }
 
 document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
