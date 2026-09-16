@@ -25,7 +25,10 @@ const lessonSceneImage=document.querySelector('img[src="assets/images/students-s
 if(lessonSceneImage){lessonSceneImage.style.objectPosition='center 35%'}
 
 const trialLineButton=document.querySelector('#trial a.btn-line');
-if(trialLineButton){trialLineButton.innerHTML='LINEで無料体験を<br>予約する'}
+if(trialLineButton){
+  trialLineButton.innerHTML='LINEで無料体験を<br>予約する';
+  trialLineButton.style.whiteSpace='nowrap';
+}
 
 document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
   link.addEventListener('click',()=>{
