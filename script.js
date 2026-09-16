@@ -21,6 +21,18 @@ if(eikenCard&&!eikenCard.querySelector('.eiken-detail-link')){const a=document.c
 const learningModeTitle=document.querySelector('.split-photo h3');
 if(learningModeTitle){learningModeTitle.innerHTML='「おぎココに来ると、<br>学習モードに。」'}
 
+const featuresHeading=document.querySelector('#features .section-heading h2');
+if(featuresHeading){
+  const mobileFeaturesHeading=window.matchMedia('(max-width: 600px)');
+  const updateFeaturesHeading=()=>{
+    featuresHeading.innerHTML=mobileFeaturesHeading.matches
+      ? '一人ひとりに合わせる<br>3つの特徴'
+      : '一人ひとりに合わせる 3つの特徴';
+  };
+  updateFeaturesHeading();
+  if(mobileFeaturesHeading.addEventListener){mobileFeaturesHeading.addEventListener('change',updateFeaturesHeading)}
+}
+
 const lessonSceneImage=document.querySelector('img[src="assets/images/students-studying.jpg"]');
 if(lessonSceneImage){lessonSceneImage.style.objectPosition='center 35%'}
 
