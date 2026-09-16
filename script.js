@@ -21,6 +21,9 @@ if(eikenCard&&!eikenCard.querySelector('.eiken-detail-link')){const a=document.c
 const learningModeTitle=document.querySelector('.split-photo h3');
 if(learningModeTitle){learningModeTitle.innerHTML='「おぎココに来ると、<br>学習モードに。」'}
 
+const lessonSceneImage=document.querySelector('img[src="assets/images/students-studying.jpg"]');
+if(lessonSceneImage){lessonSceneImage.style.objectPosition='center 25%'}
+
 document.querySelectorAll('a[href*="page.line.me/971ktbrj"]').forEach((link,index)=>{
   link.addEventListener('click',()=>{
     window.gtag('event','line_click',{
