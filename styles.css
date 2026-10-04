@@ -70,3 +70,14 @@
   .practice-trial-points{display:grid;grid-template-columns:1fr}
   .practice-trial-points span{text-align:center}
 }
+
+.practice-regular{margin-top:24px;padding-top:22px;border-top:1px solid rgba(47,104,124,.13)}
+.practice-price-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.practice-price-card{background:#fff;border:1px solid #d7e8ed;border-radius:20px;padding:22px}
+.practice-price-card h4{margin:0 0 10px;font-size:20px}
+.practice-price-card div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-top:1px solid #edf2f4}
+.practice-price-card span{color:#607780;font-weight:700}
+.practice-price-card strong{font-size:18px}
+@media(max-width:600px){
+  .practice-price-grid{grid-template-columns:1fr}
+}
