@@ -585,3 +585,28 @@
     padding:4px 7px;
   }
 }
+
+
+/* trial step heading alignment on desktop and mobile */
+.step{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  column-gap:14px;
+  row-gap:0;
+  align-items:center;
+}
+.step>span{
+  grid-column:1;
+  grid-row:1;
+  margin:0;
+}
+.step h3{
+  grid-column:2;
+  grid-row:1;
+  margin:0;
+}
+.step p{
+  grid-column:1 / -1;
+  grid-row:2;
+  margin-top:13px;
+}
