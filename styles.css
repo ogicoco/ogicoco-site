@@ -116,3 +116,47 @@
   .practice-mini-flow span{text-align:center}
   .practice-mini-flow b{transform:rotate(90deg);text-align:center;line-height:1}
 }
+
+
+/* mobile readability refinements */
+@media(max-width:600px){
+  .feature-card{
+    padding:22px 20px;
+    border-radius:22px;
+  }
+  .feature-card .number{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+  }
+  .feature-card h3{
+    font-size:19px;
+    line-height:1.45;
+    margin:14px 0 8px;
+  }
+  .feature-card p{
+    font-size:15px;
+    line-height:1.65;
+    letter-spacing:0;
+  }
+  .steps{
+    gap:12px;
+  }
+  .step{
+    padding:22px 20px;
+    border-radius:20px;
+  }
+  .step>span{
+    width:36px;
+    height:36px;
+  }
+  .step h3{
+    font-size:18px;
+    line-height:1.4;
+    margin:13px 0 7px;
+  }
+  .step p{
+    font-size:15px;
+    line-height:1.65;
+  }
+}
