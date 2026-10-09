@@ -38,8 +38,8 @@ if(trialHeading){
   const mobileTrialHeading=window.matchMedia('(max-width: 600px)');
   const updateTrialHeading=()=>{
     trialHeading.innerHTML=mobileTrialHeading.matches
-      ? 'LINEから<br>かんたん4ステップ'
-      : 'LINEから かんたん4ステップ';
+      ? 'LINEから<br>かんたん3ステップ'
+      : 'LINEから かんたん3ステップ';
   };
   updateTrialHeading();
   if(mobileTrialHeading.addEventListener){mobileTrialHeading.addEventListener('change',updateTrialHeading)}
