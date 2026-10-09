@@ -160,3 +160,29 @@
     line-height:1.65;
   }
 }
+
+
+/* mobile tablet teaser readability */
+@media(max-width:600px){
+  .practice-teaser .eyebrow{
+    font-size:13px;
+  }
+  .practice-teaser-copy>p:not(.eyebrow){
+    font-size:16px;
+    line-height:1.75;
+  }
+  .practice-mini-flow span{
+    font-size:14px;
+    padding:8px 12px;
+  }
+  .practice-teaser-label{
+    font-size:14px;
+  }
+  .practice-teaser-action>strong{
+    font-size:28px;
+  }
+  .practice-teaser-action>small{
+    font-size:15px;
+    line-height:1.6;
+  }
+}
