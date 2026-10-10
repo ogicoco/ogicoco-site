@@ -63,10 +63,10 @@
     .elementary-hero .lead{font-size:18px;color:#4e6973;margin:0 0 24px}
     .elementary-hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 40%;border-radius:32px;box-shadow:var(--shadow)}
     .concern-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .concern-card{background:#fff;border:1px solid #e5eff3;border-radius:22px;padding:24px}
-    .concern-card span{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--blue-pale);color:var(--blue-dark);font-weight:900;margin-bottom:14px}
-    .concern-card h3{font-size:18px;line-height:1.45;margin:0 0 8px}
-    .concern-card p{font-size:14px;color:#607780;margin:0}
+    .concern-card{display:grid;grid-template-columns:42px minmax(0,1fr);column-gap:14px;row-gap:0;align-items:center;background:#fff;border:1px solid #e5eff3;border-radius:22px;padding:24px}
+    .concern-card span{grid-column:1;grid-row:1;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--blue-pale);color:var(--blue-dark);font-weight:900;margin:0}
+    .concern-card h3{grid-column:2;grid-row:1;font-size:18px;line-height:1.4;margin:0}
+    .concern-card p{grid-column:1 / -1;grid-row:2;font-size:14px;color:#607780;margin:13px 0 0}
     .grade-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .grade-card{border-radius:26px;padding:30px;background:#fff;border:1px solid #deebef}
     .grade-card .mini-label{margin:0 0 8px!important}
@@ -106,8 +106,9 @@
       .elementary-hero h1{font-size:38px}
       .elementary-hero .lead{font-size:16px;line-height:1.72}
       .concern-grid,.grade-grid,.related-grid,.quick-facts{grid-template-columns:1fr}
-      .concern-card{padding:20px}
-      .concern-card h3{font-size:18px}
+      .concern-card{grid-template-columns:42px minmax(0,1fr);column-gap:14px;padding:20px}
+      .concern-card h3{font-size:19px;line-height:1.4}
+      .concern-card p{margin-top:13px}
       .concern-card p,.method-card p{font-size:15px;line-height:1.68}
       .grade-card{padding:24px 21px}
       .grade-card h3{font-size:22px}
