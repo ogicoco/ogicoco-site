@@ -629,3 +629,58 @@
     margin-top:17px;
   }
 }
+
+
+/* education philosophy */
+.philosophy-teaser-section{
+  background:linear-gradient(180deg,#f4fbf5,#fff);
+  padding:78px 0;
+}
+.philosophy-teaser{
+  max-width:920px;
+  text-align:center;
+}
+.philosophy-teaser h2{
+  font-size:clamp(32px,4.2vw,48px);
+  line-height:1.34;
+  letter-spacing:-.03em;
+  margin:0 0 18px;
+}
+.philosophy-teaser>p:not(.eyebrow){
+  max-width:800px;
+  margin:0 auto;
+  color:#526b74;
+  font-size:17px;
+  line-height:1.9;
+}
+.philosophy-teaser .philosophy-teaser-emphasis{
+  margin-top:16px;
+  color:var(--ink);
+  font-weight:800;
+}
+.philosophy-link{
+  display:inline-block;
+  margin-top:22px;
+}
+
+@media(max-width:600px){
+  .philosophy-teaser-section{
+    padding:58px 0;
+  }
+  .philosophy-teaser{
+    text-align:left;
+  }
+  .philosophy-teaser h2{
+    font-size:29px;
+    line-height:1.38;
+    margin-bottom:14px;
+  }
+  .philosophy-teaser>p:not(.eyebrow){
+    font-size:16px;
+    line-height:1.8;
+  }
+  .philosophy-link{
+    margin-top:18px;
+    font-size:15px;
+  }
+}
