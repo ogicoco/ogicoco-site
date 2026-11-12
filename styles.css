@@ -684,3 +684,29 @@
     font-size:15px;
   }
 }
+
+
+/* updated representative teacher portrait */
+.teacher-photo{
+  padding:14px;
+  border-radius:36px;
+  background:linear-gradient(145deg,#f7f8ed,#eef5ea);
+}
+.teacher-photo>img{
+  aspect-ratio:4/5;
+  max-height:none;
+  object-fit:cover;
+  object-position:center center;
+  border-radius:26px;
+  box-shadow:0 14px 34px rgba(45,92,108,.10);
+}
+@media(max-width:600px){
+  .teacher-photo{
+    padding:10px;
+    border-radius:28px;
+  }
+  .teacher-photo>img{
+    max-height:none;
+    border-radius:22px;
+  }
+}
