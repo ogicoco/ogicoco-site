@@ -710,3 +710,29 @@
     border-radius:22px;
   }
 }
+
+
+/* teacher portrait: quality-first sizing */
+.teacher-grid{
+  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
+}
+.teacher-photo{
+  max-width:340px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.teacher-photo>img{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+}
+@media(max-width:900px){
+  .teacher-grid{grid-template-columns:1fr}
+  .teacher-photo{max-width:340px}
+}
+@media(max-width:600px){
+  .teacher-photo{max-width:300px}
+}
