@@ -6,20 +6,33 @@ permissions:
   contents: write
 jobs:
   transfer:
-    if: github.actor != 'github-actions[bot]' && contains(github.event.head_commit.message, 'temporary high-res teacher image transfer')
+    if: github.actor != 'github-actions[bot]' && contains(github.event.head_commit.message, 'temporary fullres teacher image transfer')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download high-resolution teacher image
+      - name: Download full-resolution teacher image
         run: |
-          curl -fL --retry 3 'https://export-download.canva.com/df5126dd-2ba7-469e-ab08-f384fed22a3c/0/0001-4235031446929715825.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH4R7NKVBA%2F20261111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261111T202057Z&X-Amz-Expires=23868&X-Amz-Signature=728fdc4366c74ae5d081b8d3002552cd3280b906dcbfb15f1c8be39d3260bbf1&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2012%20Nov%202026%2002%3A58%3A45%20GMT' -o assets/images/teacher-profile-hq.png
-          echo "Downloaded bytes: $(wc -c < assets/images/teacher-profile-hq.png)"
-          file assets/images/teacher-profile-hq.png
-          test "$(wc -c < assets/images/teacher-profile-hq.png)" -gt 50000
+          curl -fL --retry 3 'https://export-download.canva.com/05c1a383-52e3-4e9f-8087-e028ba6bf252/0/0001-2198278514527964790.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH4R7NKVBA%2F20261111%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261111T155539Z&X-Amz-Expires=38748&X-Amz-Signature=05f08618dc931e4a0d46e1a3cf69c23946b400c615f99c3388b82d0b9a9fde3f&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2012%20Nov%202026%2002%3A41%3A27%20GMT' -o /tmp/teacher-full.png
+          echo "Source bytes: $(wc -c < /tmp/teacher-full.png)"
+          file /tmp/teacher-full.png
+          test "$(wc -c < /tmp/teacher-full.png)" -gt 200000
+      - name: Convert to high-quality WebP
+        run: |
+          python -m pip install --quiet pillow
+          python - <<'PY'
+          from PIL import Image
+          im = Image.open('/tmp/teacher-full.png').convert('RGB')
+          print('source dimensions:', im.size)
+          assert im.width >= 1000 and im.height >= 1200
+          im.save('assets/images/teacher-profile-hq.webp', 'WEBP', quality=95, method=6)
+          print('saved dimensions:', Image.open('assets/images/teacher-profile-hq.webp').size)
+          PY
+          echo "WebP bytes: $(wc -c < assets/images/teacher-profile-hq.webp)"
+          test "$(wc -c < assets/images/teacher-profile-hq.webp)" -gt 100000
       - name: Commit image
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/images/teacher-profile-hq.png
-          git commit -m "Add high-resolution teacher profile image"
+          git add assets/images/teacher-profile-hq.webp
+          git commit -m "Add full-resolution teacher profile image"
           git push
