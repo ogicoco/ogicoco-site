@@ -685,77 +685,40 @@
   }
 }
 
-
-/* updated representative teacher portrait */
+/* representative teacher portrait */
+.teacher-grid{
+  grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);
+}
 .teacher-photo{
+  position:relative;
+  max-width:380px;
+  margin-left:auto;
+  margin-right:auto;
   padding:14px;
   border-radius:36px;
   background:linear-gradient(145deg,#f7f8ed,#eef5ea);
 }
 .teacher-photo>img{
-  aspect-ratio:4/5;
-  max-height:none;
-  object-fit:cover;
-  object-position:center center;
-  border-radius:26px;
-  box-shadow:0 14px 34px rgba(45,92,108,.10);
-}
-@media(max-width:600px){
-  .teacher-photo{
-    padding:10px;
-    border-radius:28px;
-  }
-  .teacher-photo>img{
-    max-height:none;
-    border-radius:22px;
-  }
-}
-
-
-/* teacher portrait: quality-first sizing */
-.teacher-grid{
-  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-}
-.teacher-photo{
-  max-width:340px;
-  margin-left:auto;
-  margin-right:auto;
-}
-.teacher-photo>img{
-  width:100%;
-  height:auto;
-  aspect-ratio:auto;
-  max-height:none;
-  object-fit:contain;
-  object-position:center;
-}
-@media(max-width:900px){
-  .teacher-grid{grid-template-columns:1fr}
-  .teacher-photo{max-width:340px}
-}
-@media(max-width:600px){
-  .teacher-photo{max-width:300px}
-}
-
-
-/* final high-DPI representative portrait */
-.teacher-grid{
-  grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);
-}
-.teacher-photo{
-  max-width:380px;
-}
-.teacher-photo>img{
   width:100%;
   height:auto;
   aspect-ratio:4 / 5;
+  max-height:none;
   object-fit:cover;
   object-position:center;
+  border-radius:26px;
+  box-shadow:0 14px 34px rgba(45,92,108,.10);
 }
 @media(max-width:900px){
   .teacher-grid{grid-template-columns:1fr}
   .teacher-photo{max-width:380px}
 }
 @media(max-width:600px){
-  .teacher-photo{max-width:320px}
+  .teacher-photo{
+    max-width:320px;
+    padding:10px;
+    border-radius:28px;
+  }
+  .teacher-photo>img{
+    border-radius:22px;
+  }
 }
