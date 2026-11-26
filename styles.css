@@ -750,7 +750,6 @@
 .hero-service-links strong{font-size:16px;line-height:1.4;color:var(--ink)}
 .hero-service-links small{font-size:11px;color:#607780;line-height:1.5;margin-top:3px}
 .hero-service-links span{position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--blue-dark);font-size:22px}
-.hero-service-links a:nth-child(4){background:#e9f7fc;border-color:#a9d5e5}
 .price-detail-link{text-align:center;margin:22px 0}
 .service-wrap{max-width:900px}
 .service-hero{padding:56px 0;background:linear-gradient(180deg,#fffaf0,#f2f9fc)}
