@@ -722,3 +722,87 @@
     border-radius:22px;
   }
 }
+
+
+/* Service-first navigation and detail pages */
+.header-inner{gap:16px}
+.desktop-nav{gap:14px}
+.desktop-nav a,.header-cta{white-space:nowrap}
+.menu-button{display:flex;flex-shrink:0;flex-direction:column;gap:5px;border:0;background:transparent;padding:10px;cursor:pointer}
+.menu-button span{display:block;width:24px;height:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.menu-button[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-button[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-button[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.service-menu{display:none;position:absolute;top:100%;right:max(14px,calc((100% - 1120px)/2));left:auto;width:min(460px,calc(100% - 28px));padding:8px 22px;background:#fff;box-shadow:0 18px 38px rgba(45,92,108,.17);border-radius:0 0 18px 18px;max-height:calc(100vh - 90px);max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
+.service-menu.is-open:not([hidden]){display:block}
+.service-menu>a:not(.btn),.nav-group summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 3px;font-size:16px;font-weight:800;text-decoration:none;border-bottom:1px solid #e4ecef;min-height:48px}
+.service-menu>a:after{content:"→";color:var(--blue-dark)}
+.nav-group summary{list-style:none;cursor:pointer}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";color:var(--blue-dark);font-size:21px;line-height:1}
+.nav-group[open] summary:after{content:"−"}
+.nav-sub{display:grid;background:#f6fafb;padding:3px 12px 7px}
+.nav-sub a{padding:10px 4px;color:var(--blue-dark);font-weight:700;text-decoration:none;font-size:14px}
+.service-menu>a:last-child{border-bottom:0}
+.hero-service-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 22px}
+.hero-service-links a{position:relative;display:flex;flex-direction:column;min-height:70px;justify-content:center;padding:10px 24px 10px 12px;border:1px solid #d7e8ed;border-radius:13px;background:#fff;text-decoration:none;transition:.2s}
+.hero-service-links a:hover{border-color:var(--blue);background:#f6fbfd}
+.hero-service-links strong{font-size:16px;line-height:1.4;color:var(--ink)}
+.hero-service-links small{font-size:11px;color:#607780;line-height:1.5;margin-top:3px}
+.hero-service-links span{position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--blue-dark);font-size:22px}
+.hero-service-links a:nth-child(4){background:#e9f7fc;border-color:#a9d5e5}
+.price-detail-link{text-align:center;margin:22px 0}
+.service-wrap{max-width:900px}
+.service-hero{padding:56px 0;background:linear-gradient(180deg,#fffaf0,#f2f9fc)}
+.service-hero h1{font-size:clamp(34px,5vw,54px);line-height:1.25;letter-spacing:-.035em;margin:0 0 16px}
+.service-lead{font-size:17px;color:#4e6973;max-width:740px;margin:0 0 20px}
+.service-hero .subpage-back{display:inline-block;margin:0 0 18px;color:var(--blue-dark);font-size:14px;font-weight:700}
+.service-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:20px}
+.service-section{padding:52px 0;background:#fff}
+.service-section-tint{background:#f6fafb}
+.service-section h2{font-size:clamp(25px,3.4vw,34px);line-height:1.4;margin:0 0 20px;letter-spacing:-.02em}
+.service-section p{color:#526b74}
+.service-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.service-card{background:#fff;border:1px solid #deebef;border-radius:18px;padding:22px}
+.service-card h3{font-size:19px;line-height:1.4;margin:0 0 8px}
+.service-card p{margin:0 0 8px;font-size:15px}
+.service-card p:last-child{margin-bottom:0}
+.service-teacher{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:center}
+.service-teacher img{width:100%;height:auto;border-radius:18px}
+.service-teacher h3{font-size:20px;margin:0}
+.service-one-price{max-width:480px}
+.service-fees .price-card{padding:24px}
+.service-note{font-size:14px;margin:18px 0 0}
+.service-related{display:grid;gap:10px}
+.service-related a{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #deebef;background:#fff;border-radius:14px;padding:15px 18px;font-weight:800;text-decoration:none}
+.service-related span{color:var(--blue-dark)}
+@media(min-width:601px) and (max-width:1100px){
+.desktop-nav{display:none}
+.header-cta{display:inline-flex;margin-left:auto}
+.menu-button{margin-left:0}
+}
+@media(max-width:600px){
+.desktop-nav,.header-cta{display:none}
+.menu-button{margin-left:auto}
+.service-menu{left:0;right:0;width:100%;padding:8px 20px 14px;border-radius:0;max-height:calc(100vh - 145px);max-height:calc(100dvh - 145px - env(safe-area-inset-bottom))}
+.service-menu>a:not(.btn),.nav-group summary{padding:11px 3px;min-height:48px;font-size:16px}
+.hero-service-links{gap:7px;margin-bottom:17px}
+.hero-service-links a{min-height:65px;padding:9px 20px 9px 10px}
+.hero-service-links strong{font-size:15px}
+.hero-service-links small{font-size:11px}
+.hero-service-links span{right:7px}
+.service-hero{padding:30px 0 36px}
+.service-hero h1{font-size:34px}
+.service-lead{font-size:16px}
+.service-hero .hero-badges{margin-bottom:18px}
+.service-actions .btn{width:100%}
+.service-actions .text-link{margin:auto}
+.service-section{padding:34px 0}
+.service-section h2{font-size:25px;margin-bottom:16px}
+.service-card-grid{grid-template-columns:1fr;gap:10px}
+.service-card{padding:18px}
+.service-teacher{grid-template-columns:100px minmax(0,1fr);gap:15px;align-items:start}
+.service-teacher h3{font-size:17px}
+.service-teacher p{font-size:14px;margin:6px 0}
+.service-fees .price-card{padding:20px}
+}
