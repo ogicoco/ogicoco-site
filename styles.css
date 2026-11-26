@@ -805,3 +805,84 @@
 .service-teacher p{font-size:14px;margin:6px 0}
 .service-fees .price-card{padding:20px}
 }
+
+
+/* Compact homepage and independent school information pages */
+html{scroll-padding-top:90px}
+.home-hero{padding:46px 0 54px}
+.home-hero .hero-grid{gap:40px}
+.home-hero h1{font-size:clamp(36px,4.6vw,60px);margin-bottom:14px}
+.home-hero .hero-lead{font-size:16px;line-height:1.65;margin-bottom:16px}
+.home-hero .hero-badges{margin-bottom:18px}
+.home-hero .hero-photo{aspect-ratio:4/5;transform:none}
+.home-hero .hero-actions{gap:12px}
+.home-hero .hero-actions .btn{padding:14px 20px}
+.home-section{padding:44px 0}
+.home-tint{background:#f6fafb}
+.home-heading{margin-bottom:20px}
+.home-heading h2,.home-feature h2,.home-teacher h2{font-size:clamp(25px,3.3vw,34px);letter-spacing:-.02em;line-height:1.4;margin:0 0 7px}
+.home-heading p,.home-feature p:not(.eyebrow),.home-teacher p:not(.eyebrow){color:#526b74;margin:0 0 10px}
+.home-price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.home-price-grid>div{min-width:0;border:1px solid #deebef;border-radius:16px;padding:20px 12px;text-align:center;background:#fff}
+.home-price-grid span{display:block;font-weight:700;color:var(--muted);font-size:15px;margin-bottom:4px}
+.home-price-grid strong{display:block;white-space:nowrap;font-size:clamp(21px,3vw,34px);line-height:1.3;font-variant-numeric:tabular-nums}
+.home-price-grid small{font-size:14px;margin-left:2px}
+.home-detail-link{display:block;margin:16px 0 0;color:var(--blue-dark);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.home-feature{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center}
+.home-feature img{width:100%;max-height:210px;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+.home-teacher{display:grid;grid-template-columns:180px minmax(0,1fr);gap:30px;align-items:center}
+.home-teacher img{width:100%;height:auto;border-radius:18px}
+.home-teacher .home-teacher-name{color:var(--ink);font-weight:800;font-size:18px}
+.home-gallery,.classroom-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.home-gallery a{position:relative;display:block;border-radius:14px;overflow:hidden;background:#fff;text-decoration:none}
+.home-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.home-gallery span{display:block;font-weight:700;font-size:13px;text-align:center;padding:8px 2px}
+.classroom-gallery figure{margin:0}
+.classroom-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}
+.classroom-gallery figcaption{font-size:14px;color:var(--muted);margin:8px 0}
+.home-link-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.home-cta{margin-top:20px}
+.home-address p{color:#526b74;margin:0 0 10px}
+.compact-page-hero{padding:35px 0}
+.compact-page-hero .service-lead{margin-bottom:0}
+@media(max-width:900px){.home-hero .hero-grid{gap:26px}.home-hero .hero-visual{width:100%}.home-hero .hero-photo{aspect-ratio:16/9}}
+@media(max-width:600px){
+html{scroll-padding-top:80px}
+.home-hero{padding:22px 0 26px}
+.home-hero h1{font-size:32px;line-height:1.18;margin-bottom:12px}
+.home-hero .eyebrow{font-size:11px;letter-spacing:.04em}
+.home-hero .hero-lead{font-size:15px;line-height:1.65;margin-bottom:12px}
+.home-hero .hero-badges{margin-bottom:13px}
+.home-hero .hero-service-links{margin-bottom:13px}
+.home-hero .hero-service-links a{min-height:60px}
+.home-hero .hero-actions{gap:7px}
+.home-hero .hero-actions .btn{display:none}
+.home-hero .hero-actions .text-link{margin:0;font-size:14px}
+.home-hero .hero-grid{gap:17px}
+.home-hero .hero-photo{aspect-ratio:16/9;border-width:4px;border-radius:18px}
+.home-section{padding:28px 0}
+.home-heading{margin-bottom:14px}
+.home-heading h2,.home-feature h2,.home-teacher h2{font-size:23px}
+.home-heading p,.home-feature p,.home-teacher p{font-size:14px}
+.home-price-grid{gap:6px}
+.home-price-grid>div{padding:14px 4px;border-radius:12px}
+.home-price-grid span{font-size:12px}
+.home-price-grid strong{font-size:clamp(15px,4.8vw,22px)}
+.home-price-grid small{font-size:10px;margin-left:1px}
+.home-detail-link,.home-link-row a,.home-feature .text-link,.home-teacher .text-link{font-size:14px}
+.home-feature{grid-template-columns:minmax(0,1fr) 100px;gap:13px}
+.home-feature h2{font-size:21px}
+.home-feature img{aspect-ratio:4/5;max-height:none;border-radius:12px}
+.home-teacher{grid-template-columns:100px minmax(0,1fr);gap:15px;align-items:center}
+.home-teacher img{border-radius:12px}
+.home-teacher h2{font-size:19px}
+.home-teacher .home-teacher-name{font-size:16px}
+.home-gallery,.classroom-gallery{gap:7px}
+.home-gallery a{border-radius:10px}
+.home-gallery span{font-size:11px;padding:6px 1px}
+.classroom-gallery{grid-template-columns:1fr;gap:18px}
+.home-link-row{gap:12px;margin-top:12px}
+.home-cta .btn{width:100%}
+.home-address{font-size:14px}
+.compact-page-hero{padding:25px 0}
+}
